@@ -1,0 +1,11 @@
+#!/bin/bash
+ 
+#PBS -N Conversion
+#PBS -l ncpus=1
+#PBS -t 1-5
+#PBS -l walltime=0:30:00
+#PBS -q hyper
+
+cd $PBS_O_WORKDIR
+module load python
+python mkImage.py $PBS_ARRAYID
